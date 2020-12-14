@@ -24,6 +24,14 @@ class Secretaria(Funcionario):
             if s.nome == nomeSocio:
                 self.__socios.remove(s)
 
+    def buscarSocio(self, nomeSocio: str):
+        encontrou = False
+        for s in self.__socios:
+            if s.nome == nomeSocio:
+                encontrou = True
+                return s.cpf
+        return encontrou
+
     def registros(self):
         if self.__funcs and self.__socios:
             print("Registro de funcinarios: ")
